@@ -8,6 +8,7 @@ arch=(x86_64)
 url='https://github.com/dankcuddlybear/zestiso'
 depends=(bundle-media-codecs
 	dxvk-async-git
+	joystickwake
 	lib32-alsa-plugins
 	lib32-libavtp
 	lib32-openal
@@ -15,13 +16,10 @@ depends=(bundle-media-codecs
 	lib32-fluidsynth
 	lib32-gst-plugins-base
 	lib32-gst-plugins-good
-	lib32-libappindicator-gtk2
-	lib32-libappindicator-gtk3
+	lib32-libappindicator
 	lib32-libcurl-gnutls
 	lib32-libdecor
-	lib32-libindicator-gtk2
-	lib32-libindicator-gtk3
-	lib32-librtmp0
+	lib32-libindicator
 	lib32-libxslt
 	lib32-sdl_image
 	lib32-sdl_mixer
@@ -35,10 +33,6 @@ depends=(bundle-media-codecs
 	wine-gecko
 	wine-mono
 	wine-nine
-	winerunner
-	#winesync-dkms
-	#winesync-header
-	#winesync-udev-rule
 	winetricks
 )
 package() {

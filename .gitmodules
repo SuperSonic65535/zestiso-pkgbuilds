@@ -7,3 +7,6 @@
 [submodule "pkgbuilds/koi"]
 	path = pkgbuilds/koi
 	url = https://aur.archlinux.org/koi.git
+[submodule "pkgbuilds/calamares-git"]
+	path = pkgbuilds/calamares-git
+	url = https://aur.archlinux.org/calamares-git.git

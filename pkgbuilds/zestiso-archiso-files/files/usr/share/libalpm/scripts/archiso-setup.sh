@@ -26,6 +26,15 @@ cp -f /etc/mkinitcpio.conf.system /etc/mkinitcpio.conf
 ## Generate locales if not already done
 [ $(localectl list-locales | grep -c ".UTF-8") -le 1 ] && locale-gen
 
+## Copy Calamares installer files
+if [ -d /etc/calamares-custom ]; then
+    rm -rf /etc/calamares
+    mv /etc/calamares-custom /etc/calamares
+fi
+if [ -f /usr/share/applications/calamares.desktop ]; then
+    cp /usr/share/applications/calamares.desktop /etc/xdg/autostart/
+fi
+
 ## Delete unneeded files
 rm -f /etc/*.pacnew /etc/lightdm/*.pacnew
 rm -f /usr/share/libalpm/hooks/zzzz-archiso-setup.hook
