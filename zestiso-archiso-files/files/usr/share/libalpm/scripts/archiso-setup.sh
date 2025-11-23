@@ -11,6 +11,7 @@ sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 
 ## Enable important system services
 systemctl enable fstrim.timer systemd-timesyncd NetworkManager
+[ -f /usr/lib/systemd/system/ufw.service ] && systemctl enable ufw
 
 ## Initialise Pacman keyring
 pacman-key --init
