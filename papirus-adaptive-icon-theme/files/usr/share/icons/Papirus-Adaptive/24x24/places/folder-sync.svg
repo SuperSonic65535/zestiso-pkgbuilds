@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1"
+   id="svg4"
+   sodipodi:docname="folder-sync.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="12.166667"
+     inkscape:cx="2.2191781"
+     inkscape:cy="12.90411"
+     inkscape:window-width="1176"
+     inkscape:window-height="608"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+  .ColorScheme-Highlight{color:#00ff00;}
+ </style>
+  </defs>
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="9.5"
+     rx="1"
+     ry="1"
+     id="rect1" />
+  <path
+     style="display:inline;fill:currentColor"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path5"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;fill:#000000;fill-opacity:1;opacity:0.25"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path1" />
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="8.5"
+     rx="1"
+     ry="1"
+     id="rect2" />
+  <rect
+     style="fill:#e4e4e4"
+     width="16"
+     height="8"
+     x="4"
+     y="7"
+     rx="1"
+     ry="1"
+     id="rect3" />
+  <rect
+     style="fill:currentColor"
+     width="20"
+     height="12"
+     x="2"
+     y="9"
+     rx="1"
+     ry="1"
+     id="rect4"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;opacity:0.2;fill:#ffffff"
+     d="M 3,3 C 2.446,3 2,3.446 2,4 v 0.5 c 0,-0.554 0.446,-1 1,-1 h 5.5 c 1.5,0 2,2 3.5,2 h 9 c 0.554,0 1,0.446 1,1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 Z"
+     id="path4" />
+  <path
+     style="fill:#000000;fill-opacity:1;opacity:0.6"
+     d="m 12,11 c -0.754845,0.0016 -1.48894,0.247229 -2.0927742,0.700195 l 0.7158212,0.71582 C 11.031365,12.145444 11.510171,12.000783 12,12 c 1.209502,0 2.218585,0.858848 2.450195,2 H 13.5 L 15,16.5 16.5,14 H 15.459961 C 15.216612,12.304684 13.762645,11 12,11 Z M 8.9999998,12.5 7.5,15 h 1.040039 c 0.2433478,1.695315 1.697316,3 3.459961,3 0.754845,-0.0016 1.48894,-0.247229 2.092773,-0.700196 l -0.71582,-0.71582 C 12.968635,16.854556 12.489829,16.999217 12,17 10.790498,17 9.7814148,16.141152 9.5498038,15 H 10.5 Z"
+     id="path5-7" />
+</svg>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1"
+   id="svg4"
+   sodipodi:docname="folder-kde.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="8.6031325"
+     inkscape:cx="12.844159"
+     inkscape:cy="3.8358121"
+     inkscape:window-width="1176"
+     inkscape:window-height="608"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+  .ColorScheme-Highlight{color:#00ff00;}
+ </style>
+  </defs>
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="9.5"
+     rx="1"
+     ry="1"
+     id="rect1" />
+  <path
+     style="display:inline;fill:currentColor"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path5"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;fill:#000000;fill-opacity:1;opacity:0.25"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path1" />
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="8.5"
+     rx="1"
+     ry="1"
+     id="rect2" />
+  <rect
+     style="fill:#e4e4e4"
+     width="16"
+     height="8"
+     x="4"
+     y="7"
+     rx="1"
+     ry="1"
+     id="rect3" />
+  <rect
+     style="fill:currentColor"
+     width="20"
+     height="12"
+     x="2"
+     y="9"
+     rx="1"
+     ry="1"
+     id="rect4"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;fill:#03060a;fill-opacity:1;opacity:0.6"
+     d="M 12.2187,11 C 12.0976,11 12,11.223 12,11.5 v 3 c 0,0.277 0.0976,0.5 0.2187,0.5 h 0.5625 C 12.9024,15 13,14.777 13,14.5 v -0.75 l 0.0195,-0.0234 1.0335,1.0332 c 0.196,0.1958 0.422,0.2849 0.508,0.1992 l 0.398,-0.3985 C 15.045,14.4749 14.956,14.2486 14.76,14.0527 L 13.707,13 14.76,11.9473 c 0.196,-0.1959 0.285,-0.4222 0.199,-0.5078 L 14.561,11.041 c -0.086,-0.0857 -0.312,0.0034 -0.508,0.1992 L 13.0195,12.2734 13,12.25 V 11.5 C 13,11.223 12.9024,11 12.7812,11 Z m -1.7734,0.793 c -0.109,-0.002 -0.273,0.0855 -0.4199,0.2324 -0.1959,0.1959 -0.2849,0.4221 -0.1992,0.5078 L 10.416,13.123 C 10.2393,13.3893 10.1154,13.687 10.0508,14 H 9.2187 C 9.0976,14 9,14.223 9,14.5 9,14.777 9.0976,15 9.2187,15 h 0.836 c 0.0634,0.3127 0.186,0.6104 0.3613,0.877 l -0.5898,0.5898 c -0.0857,0.0857 0.0033,0.3119 0.1992,0.5078 0.1959,0.1954 0.4221,0.2854 0.5078,0.1994 l 0.5898,-0.59 c 0.2663,0.1767 0.564,0.3006 0.877,0.3652 V 17.781 C 12,17.902 12.223,18 12.5,18 12.777,18 13,17.902 13,17.781 v -0.8357 c 0.3127,-0.0634 0.6104,-0.186 0.877,-0.3613 l 0.59,0.59 c 0.085,0.086 0.312,-0.003 0.508,-0.1994 0.195,-0.1959 0.285,-0.4221 0.199,-0.5078 l -0.59,-0.5898 c 0.158,-0.2396 0.274,-0.5045 0.342,-0.7833 l -0.365,0.3653 c -0.086,0.0857 -0.312,-0.0034 -0.508,-0.1992 L 13.877,15.084 C 13.6429,15.6376 13.1011,15.9981 12.5,16 11.6716,16 11,15.3284 11,14.5 c 0.0013,-0.4252 0.1831,-0.8298 0.5,-1.1133 v -1.1719 c -0.1312,0.0562 -0.2573,0.1235 -0.377,0.2012 L 10.5332,11.8262 C 10.5118,11.8047 10.4816,11.7936 10.4453,11.793 Z"
+     id="path5-5" />
+  <path
+     style="display:inline;opacity:0.2;fill:#ffffff"
+     d="M 3,3 C 2.446,3 2,3.446 2,4 v 0.5 c 0,-0.554 0.446,-1 1,-1 h 5.5 c 1.5,0 2,2 3.5,2 h 9 c 0.554,0 1,0.446 1,1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 Z"
+     id="path4" />
+</svg>

@@ -1,0 +1,12 @@
+# Maintainer: SuperSonic65536 <SuperSonic65535@proton.me>
+pkgname=papirus-adaptive-icon-theme
+pkgver=$(date +%Y.%-m.%-d)
+pkgrel=$(expr $(date +%-S) + $(expr 60 \* $(date +%-M)) + $(expr 3600 \* $(date +%-H)))
+pkgdesc='Papirus Adaptive icon theme (follows colour scheme)'
+arch=(any)
+url='https://github.com/SuperSonic65536/zestiso'
+depends=()
+package() {
+	cp -r "$srcdir/../files/usr" "$pkgdir"
+	"$srcdir/../../set-default-permissions.sh" "$pkgdir"
+}

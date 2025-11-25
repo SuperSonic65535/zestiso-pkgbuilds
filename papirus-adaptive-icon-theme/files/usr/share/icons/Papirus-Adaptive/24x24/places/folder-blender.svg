@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   version="1"
+   id="svg4"
+   sodipodi:docname="folder-blender.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="12.166667"
+     inkscape:cx="11.630137"
+     inkscape:cy="11.260274"
+     inkscape:window-width="1176"
+     inkscape:window-height="608"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+  .ColorScheme-Highlight{color:#00ff00;}
+ </style>
+  </defs>
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="9.5"
+     rx="1"
+     ry="1"
+     id="rect1" />
+  <path
+     style="display:inline;fill:currentColor"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path5"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;fill:#000000;fill-opacity:1;opacity:0.25"
+     d="m 2,17 c 0,0.554 0.446,1 1,1 h 18 c 0.554,0 1,-0.446 1,-1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 H 3 C 2.446,3 2,3.446 2,4"
+     id="path1" />
+  <rect
+     style="display:inline;opacity:0.2"
+     width="20"
+     height="12"
+     x="2"
+     y="8.5"
+     rx="1"
+     ry="1"
+     id="rect2" />
+  <rect
+     style="fill:#e4e4e4"
+     width="16"
+     height="8"
+     x="4"
+     y="7"
+     rx="1"
+     ry="1"
+     id="rect3" />
+  <rect
+     style="fill:currentColor"
+     width="20"
+     height="12"
+     x="2"
+     y="9"
+     rx="1"
+     ry="1"
+     id="rect4"
+     class="ColorScheme-Highlight" />
+  <path
+     style="display:inline;opacity:0.2;fill:#ffffff"
+     d="M 3,3 C 2.446,3 2,3.446 2,4 v 0.5 c 0,-0.554 0.446,-1 1,-1 h 5.5 c 1.5,0 2,2 3.5,2 h 9 c 0.554,0 1,0.446 1,1 V 6 C 22,5.446 21.554,5 21,5 H 12 C 10.5,5 10,3 8.5,3 Z"
+     id="path4" />
+  <path
+     style="fill:currentColor;stroke-width:0.450011"
+     d="m 11.420557,12 c -0.142461,0 -0.295529,0.109476 -0.295529,0.245461 v 2.454484 H 10 L 12.02505,16.95 14.050101,14.699945 H 12.925073 V 12.245461 C 12.925073,12.109476 12.772005,12 12.629544,12 Z"
+     id="path5-5"
+     class="ColorScheme-Highlight" />
+  <path
+     style="fill:#000000;stroke-width:0.727281;fill-opacity:1;opacity:0.6"
+     d="m 11.555349,11.004555 c -0.184745,0.02075 -0.361564,0.112425 -0.487221,0.269889 -0.251315,0.314929 -0.199871,0.770003 0.115058,1.021318 l 0.582393,0.464494 H 9.4544738 c -0.4029135,0 -0.7272807,0.324367 -0.7272807,0.72728 0,0.402914 0.3243672,0.727281 0.7272807,0.727281 h 1.0426252 l -2.1960469,1.592347 c -0.326209,0.236489 -0.3984225,0.689427 -0.1619336,1.015636 0.2364889,0.326209 0.6894271,0.398422 1.0156361,0.161934 L 10.232891,16.203475 A 2.9091226,2.9091226 0 0 0 13.090877,18.578501 2.9091226,2.9091226 0 0 0 16,15.669378 2.9091226,2.9091226 0 0 0 14.752827,13.284409 2.9091226,2.9091226 0 0 0 14.732943,13.268787 L 12.090866,11.159386 C 11.933402,11.033729 11.740094,10.9838 11.555349,11.004555 Z m 1.535528,3.210262 a 1.4545613,1.4545613 0 0 1 1.454562,1.454561 1.4545613,1.4545613 0 0 1 -1.454562,1.454562 1.4545613,1.4545613 0 0 1 -1.454561,-1.454562 1.4545613,1.4545613 0 0 1 1.454561,-1.454561 z m 0,0.727281 a 0.72728066,0.72728066 0 0 0 -0.72728,0.72728 0.72728066,0.72728066 0 0 0 0.72728,0.727281 0.72728066,0.72728066 0 0 0 0.727281,-0.727281 0.72728066,0.72728066 0 0 0 -0.727281,-0.72728 z"
+     id="path7" />
+</svg>
