@@ -7,7 +7,6 @@ arch=(x86_64)
 url='https://github.com/dankcuddlybear/zestiso'
 conflicts=('bundle-nvidia-pro' 'bundle-nvidia-pro-340xx' 'bundle-nvidia-pro-390xx' 'bundle-nvidia-pro-470xx' 'bundle-nvidia-pro-525xx')
 depends=(
-	libva-mesa-driver lib32-libva-mesa-driver
 	linux-firmware
 	mesa lib32-mesa
 	mesa-vdpau lib32-mesa-vdpau
