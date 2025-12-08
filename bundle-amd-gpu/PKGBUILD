@@ -6,11 +6,10 @@ pkgdesc='Open source AMD/ATI GPU drivers - all-in-one bundle (64bit+32bit)'
 arch=(x86_64)
 url='https://github.com/dankcuddlybear/zestiso'
 depends=(
-	# Core firmware + OpenGL
+	# Core firmware + OpenGL + VAAPI/VDPAU
 	linux-firmware
 	mesa lib32-mesa
 	# Vulkan
-	vulkan-icd-loader lib32-vulkan-icd-loader
 	vulkan-mesa-layers lib32-vulkan-mesa-layers
 	vulkan-radeon lib32-vulkan-radeon
 	# OpenCL
