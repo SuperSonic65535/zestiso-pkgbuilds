@@ -227,7 +227,8 @@ fi
 
 ## Main menu
 while true; do
-	Selection="$(kdialog --menu "How would you like to install ZestISO?" "multiboot" "Install alongside current OS" "replace" "Replace a partition with ZestISO" "erase" "Erase disk and install ZestISO" "expert" "Expert installation" 0 "Quit ❌")"
+	#Selection="$(kdialog --menu "How would you like to install ZestISO?" "multiboot" "Install alongside current OS" "replace" "Replace a partition with ZestISO" "erase" "Erase disk and install ZestISO" "expert" "Expert installation" 0 "Quit ❌")"
+	Selection="$(kdialog --menu "How would you like to install ZestISO?" "erase" "Erase disk and install ZestISO" "expert" "Expert installation" 0 "Quit ❌")"
 	[ -z "$Selection" ] || [ "$Selection" == "0" ] && exit 0
 
 	case $Selection in
@@ -274,7 +275,7 @@ while true; do
 				InstallationText="${InstallationText}Install $OS_NAME on disk $SelectedDisk\n"
 				[ "$BootMode" == "i386-pc" ] && InstallationText="${InstallationText}Install GRUB bootloader to MBR on disk $SelectedDisk (legacy BIOS mode)" || \
 				InstallationText="${InstallationText}Install GRUB bootloader to GPT on disk $SelectedDisk (UEFI mode)"
-				InstallationText="${InstallationText}\n\nThis will erase ALL data on disk $SelectedDisk. Make sure you have backed up any important files.\nDo you wish to continue?"
+				InstallationText="${InstallationText}\n\nThis will erase ALL data on disk $SelectedDisk. Make sure you have backed up any important files.\nBegin installation?"
 				kdialog --warningyesno "$InstallationText" || break
 
 				echo "Erasing disk $SelectedDisk and creating partitions..."
@@ -310,6 +311,10 @@ while true; do
 			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
 			exit 0;;
 		"expert")
-			;;
+			SelectedPartitions="$(PartitionSelection)"
+			kdialog --warningyesno "$OS_NAME is now ready to be installed to the selected partitions.\nThis will delete any existing OS on the selected partitions.\nThis will also delete all data on partitions that will be formatted.\nPlease check the list of changes:\n\n${SelectedPartitions}\n\nBegin installation?" || break
+			InstallOS "$SelectedPartitions"
+			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
+			exit 0;;
 	esac
 done
