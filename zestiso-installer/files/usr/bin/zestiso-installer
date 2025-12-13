@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/lib/zestiso-installer
+/usr/lib/zestiso-installer/zestiso-installer $@

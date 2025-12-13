@@ -14,7 +14,6 @@ systemctl enable fstrim.timer systemd-timesyncd NetworkManager
 
 ## Uncomment mirrors in pacman mirrorlist
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
-[ -f /etc/pacman.d/archlinuxcn-mirrorlist ] && sed -i "s/#Server/Server/g" /etc/pacman.d/archlinuxcn-mirrorlist
 
 ## Initialise Pacman keyring
 pacman-key --init
@@ -24,17 +23,11 @@ pacman-key --populate
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key 3056513887B78AEB
 
-## Copy Calamares installer files
-if [ -d /etc/calamares-custom ]; then
-    rm -rf /etc/calamares
-    mv /etc/calamares-custom /etc/calamares
-fi
-if [ -f /usr/share/applications/calamares.desktop ]; then
-    cp /usr/share/applications/calamares.desktop /etc/xdg/autostart/
-fi
-
 ## Replace mkinitcpio.conf so that mkinitcpio is properly configured for Arch install
 cp -f /etc/mkinitcpio.conf.system /etc/mkinitcpio.conf
+
+## Back up microcode
+cp /boot/amd-ucode.img /; cp /boot/intel-ucode.img /
 
 ## Cleanup files and fix permissions
 chmod 750 /etc/polkit-1/rules.d
