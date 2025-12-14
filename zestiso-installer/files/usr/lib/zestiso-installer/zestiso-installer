@@ -2,10 +2,10 @@
 [ "$(whoami)" == "root" ] && \
 echo "[ERROR] This script will not work as root/sudo, please run this script as a normal administrator user (member of group wheel)" && \
 exit 1
-if ! (pkexec echo "Checking for permissions..."); then
-	echo "[ERROR] Authentication failed, make sure to run this script as a normal administrator user (member of group wheel)"
-	exit 13
-fi
+#if ! (pkexec echo "Checking for permissions..."); then
+#	echo "[ERROR] Authentication failed, make sure to run this script as a normal administrator user (member of group wheel)"
+#	exit 13
+#fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 OS_NAME="$(cat /etc/os-release | grep -m 1 "PRETTY_NAME=" | cut -d '=' -f 2 | sed 's/"//g')"; [ -z "$OS_NAME" ] && OS_NAME="GNU/Linux"
@@ -76,14 +76,14 @@ PartitionSelection() {
 				unset MountPoint NewMountPoint Format FileSystem Label
 				Format="no"
 				FileSystem="$(lsblk -no fstype /dev/$DevName)"
-				NewFileSystem="$FileSystem"
+				[ -z "$NewFileSystem" ] && NewFileSystem="$FileSystem"
 				Label="$(lsblk -no label /dev/$DevName)"
 				for Partition in $SelectedPartitions; do
 					if [ "$(echo "$Partition" | cut -d ';' -f 1)" == "$DevName" ]; then
 						MountPoint="$(echo "$Partition" | cut -d ';' -f 2)"
 						NewMountPoint="$MountPoint"
 						Format="$(echo "$Partition" | cut -d ';' -f 3)"
-						FileSystem="$(echo "$Partition" | cut -d ';' -f 4)"
+						NewFileSystem="$(echo "$Partition" | cut -d ';' -f 4)"
 						Label="$(echo "$Partition" | cut -d ';' -f 5)"
 					fi
 				done; while true; do
@@ -153,7 +153,7 @@ PartitionSelection() {
 									fi; Label="$(kdialog --inputbox "Enter partition label (or leave blank for none)" $Label)"
 								fi;;
 							5)	if [ ! -z "$NewMountPoint" ]; then
-									SelectedPartitions="$SelectedPartitions $DevName;$NewMountPoint;$Format;$NewFileSystem;$Label"
+									SelectedPartitions="$(echo "$SelectedPartitions $DevName;$NewMountPoint;$Format;$NewFileSystem;$Label" | xargs -n1 | sort -u | xargs)"
 								elif [ "$MountPoint" != "$NewMountPoint" ]; then
 									SelectedPartitions="$(echo "$SelectedPartitions" | sed "s/[^ ]*;\\$MountPoint;[^ ]*//")"
 								fi; break;;
@@ -305,8 +305,7 @@ while true; do
 						else
 							InstallOS "${SelectedDisk}1;/boot;YES;vfat;BOOT ${SelectedDisk}2;/;YES;ext4;$(cat /etc/os-release | grep -v "_ID=" | grep -m 1 "ID=" | cut -d '=' -f 2)"
 						fi;;
-				esac
-
+				esac; break
 			done
 			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
 			exit 0;;
