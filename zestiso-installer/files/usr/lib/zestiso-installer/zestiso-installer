@@ -126,6 +126,7 @@ PartitionSelection() {
 								fi;;
 							2)	if [ ! -z "$NewMountPoint" ]; then
 									if [ ! -z "$FileSystem" ] && [ "$FileSystem" != "$NewFileSystem" ]; then Format="YES"
+									elif [ "$NewFileSystem" == "swap" ]; then Format="YES";
 									else [ $Format == "YES" ] && Format="no" || Format="YES"; fi
 								fi;;
 							3) 	if [ $Format == "YES" ]; then
@@ -183,13 +184,15 @@ InstallOS() {
 		Label="$(echo "$Partition" | cut -d ';' -f 5)"
 
 		## Format and label partitions
-		sync; sudo umount -AfR "/dev/$DevName"
+		sync; if [ "$FileSystem" == "swap" ]; then sudo swapoff "/dev/$DevName"
+		else sudo umount -AfR "/dev/$DevName"; fi
 		if [ "$Format" == "YES" ]; then
 			case $FileSystem in
 				ext4) sudo mkfs.ext4 -F "/dev/$DevName";;
 				btrfs) sudo mkfs.btrfs -f "/dev/$DevName";;
 				vfat) sudo mkfs.vfat -F32 "/dev/$DevName";;
 				exfat) sudo mkfs.exfat "/dev/$DevName";;
+				swap) sudo mkswap "/dev/$DevName";;
 			esac
 		fi; if [ ! -z "$Label" ]; then
 			case $FileSystem in
@@ -197,13 +200,16 @@ InstallOS() {
 				btrfs) sudo btrfs filesystem label "/dev/$DevName" "$Label";;
 				vfat) sudo fatlabel "/dev/$DevName" "$Label";;
 				exfat) sudo exfatlabel "/dev/$DevName" "$Label";;
+				swap) sudo swaplabel -L "$Label" "/dev/$DevName";;
 			esac
-		fi; sudo mkdir -p "/mnt${MountPoint}"; sudo mount "/dev/$DevName" "/mnt${MountPoint}"
-	done
-	[ "$BootMode" != "i386-pc" ] && sudo mkdir -p /mnt/boot/EFI
+		fi; sync; if [ "$FileSystem" == "swap" ]; then sudo swapon "/dev/$DevName"
+		else
+			sudo mkdir -p "/mnt${MountPoint}"
+			sudo mount "/dev/$DevName" "/mnt${MountPoint}"
+		fi
+	done; [ "$BootMode" != "i386-pc" ] && sudo mkdir -p /mnt/boot/EFI
 
 	## Copy rootfs to new root partition
-	read -p "Press ENTER to begin copying files..."
 	echo "Copying rootfs..."
 	sudo cp -rv --preserve=all /run/archiso/airootfs/* /mnt/
 	echo "Copying Linux kernel..."
@@ -212,10 +218,17 @@ InstallOS() {
 	## FSTAB
 	sudo sh -c "genfstab -U /mnt > /mnt/etc/fstab"
 
-	## Chroot setup
+	## Copy installer files
+	sudo cp "$SCRIPT_DIR/config-first-boot.service" /mnt/
+	sudo cp "$SCRIPT_DIR/config-first-boot.sh" /mnt/
 	sudo cp "$SCRIPT_DIR/installer-chroot.sh" /mnt/
-	sudo arch-chroot /mnt "/installer-chroot.sh"
+	sudo mkdir -p /mnt/home/live/.config/autostart
+	sudo cp "$SCRIPT_DIR/user-setup.desktop" /mnt/home/live/.config/autostart/
+	sudo cp "$SCRIPT_DIR/user-setup.sh" /mnt/home/live/
 
+	## Chroot setup
+	sudo arch-chroot /mnt "/installer-chroot.sh"
+	sudo rm /mnt/installer-chroot.sh
 	sync
 }
 

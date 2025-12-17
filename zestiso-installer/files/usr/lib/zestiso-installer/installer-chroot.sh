@@ -1,51 +1,12 @@
 #!/bin/bash
-## Automatically remove drivers for GPUs not present
-UNNEEDED_PKGS=""
-if (! (lspci | grep -i "VGA compatible controller: NVIDIA" &> /dev/null)); then
-    echo "No NVIDIA gpus found, drivers will be uninstalled."
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-free"
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro"
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-340xx"
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-390xx"
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-470xx"
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-525xx"
-else echo "Found NVIDIA GPU(s)"; fi
-if (! (lspci | grep -i "VGA compatible controller: Intel" &> /dev/null)); then
-    echo "No Intel gpus found, drivers will be uninstalled."
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-intel-gpu"
-else echo "Found Intel GPU(s)"; fi
-if (! (lspci | grep -i "VGA compatible controller: Advanced Micro Devices" &> /dev/null)); then
-    echo "No AMD gpus found, drivers will be uninstalled."
-	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-amd-gpu"
-else echo "Found AMD GPU(s)"; fi
+## Change UID and GID for live user
+usermod -u 1024 live; groupmod -g live 1024
 
-## Restore microcode
-mv /amd-ucode.img /boot/; mv /intel-ucode.img /boot/
-## Automatically remove microcode for CPUs not present
-CPU_VENDOR_ID="$(lscpu | grep -i "Vendor ID:" | cut -d ':' -f 2 | xargs)"
-[ -z "$CPU_VENDOR_ID" ] && CPU_VENDOR_ID="GenericCPU"
-if [ "$CPU_VENDOR_ID" != "GenuineIntel" ]; then
-    echo "No Intel CPU found, microcode will be uninstalled."
-	UNNEEDED_PKGS="$UNNEEDED_PKGS intel-ucode"
-else echo "Found Intel CPU"; fi
-if [ "$CPU_VENDOR_ID" != "AuthenticAMD" ]; then
-    echo "No AMD CPU found, microcode will be uninstalled."
-	UNNEEDED_PKGS="$UNNEEDED_PKGS amd-ucode"
-else echo "Found AMD CPU"; fi
+## Fix permissions for live user
+chown -R 1024:1024 /home/live
 
-## Check which unneeded packages are still present, and add them to a list to uninstall
-PKGS_TO_UNINSTALL=""
-echo "Checking installed packages..."
-for PKG in $UNNEEDED_PKGS; do
-    pacman -Qi $PKG &> /dev/null && PKGS_TO_UNINSTALL="$PKGS_TO_UNINSTALL $PKG"
-done
-echo "To remove: $PKGS_TO_UNINSTALL"
-
-## Uninstall unneeded packages
-pacman --noconfirm -Rus $PKGS_TO_UNINSTALL
-
-echo "Marking dependencies..."
-pacman --asdeps -D bash gnu-free-fonts iptables-nft lib32-sdl12-compat libglvnd mkinitcpio noto-fonts ntfs-3g qt6-multimedia-gstreamer pacman phonon-qt6-gstreamer-git polkit wireplumber
+## Enable sudo for wheel members
+echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/10_wheel
 
 ## Create mkinitcpio preset
 rm /etc/mkinitcpio.d/*.preset
@@ -61,8 +22,56 @@ echo "default_image=\"/boot/initramfs-$KERNEL_NAME.img\"" >> /etc/mkinitcpio.d/$
 echo "#default_uki=\"/efi/EFI/Linux/arch-$KERNEL_NAME.efi\"" >> /etc/mkinitcpio.d/$KERNEL_NAME.preset
 echo "#default_options=\"--splash /usr/share/systemd/bootctl/splash-arch.bmp\"" >> /etc/mkinitcpio.d/$KERNEL_NAME.preset
 
-## Enable sudo for wheel members
-echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/10_wheel
+## Automatically remove drivers for GPUs not present
+UNNEEDED_PKGS=""
+if (! (lspci | grep -i "VGA compatible controller: NVIDIA" &> /dev/null)); then
+    echo "No NVIDIA GPUs found, drivers will be uninstalled."
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-free"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-340xx"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-390xx"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-470xx"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-nvidia-pro-525xx"
+else echo "Found NVIDIA GPU(s)"; fi
+if (! (lspci | grep -i "VGA compatible controller: Intel" &> /dev/null)); then
+    echo "No Intel GPUs found, drivers will be uninstalled."
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-intel-gpu"
+else echo "Found Intel GPU(s)"; fi
+if (! (lspci | grep -i "VGA compatible controller: Advanced Micro Devices" &> /dev/null)); then
+    echo "No AMD GPUs found, drivers will be uninstalled."
+	UNNEEDED_PKGS="$UNNEEDED_PKGS bundle-amd-gpu"
+else echo "Found AMD GPU(s)"; fi
+
+## Automatically remove microcode for CPUs not present
+echo "Checking CPU manufacturer..."
+CPU_VENDOR_ID="$(lscpu | grep -i "Vendor ID:" | cut -d ':' -f 2 | xargs)"
+[ -z "$CPU_VENDOR_ID" ] && CPU_VENDOR_ID="GenericCPU"
+if [ "$CPU_VENDOR_ID" != "GenuineIntel" ]; then
+    echo "Not an Intel CPU, uninstalling intel-ucode"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS intel-ucode"
+	rm /intel-ucode.img
+else echo "Found Intel CPU"; mv /intel-ucode.img /boot/; fi
+if [ "$CPU_VENDOR_ID" != "AuthenticAMD" ]; then
+    echo "Not an AMD CPU, uninstalling amd-ucode"
+	UNNEEDED_PKGS="$UNNEEDED_PKGS amd-ucode"
+	rm /amd-ucode.img
+else echo "Found AMD CPU"; mv /amd-ucode.img /boot/; fi
+
+UNNEEDED_PKGS="$UNNEEDED_PKGS mkinitcpio-archiso syslinux zestiso-archiso-files zestiso-installer"
+
+## Check which unneeded packages are still present, and add them to a list to uninstall
+PKGS_TO_UNINSTALL=""
+echo "Checking installed packages..."
+for PKG in $UNNEEDED_PKGS; do
+    pacman -Qi $PKG &> /dev/null && PKGS_TO_UNINSTALL="$PKGS_TO_UNINSTALL $PKG"
+done
+echo "To remove: $PKGS_TO_UNINSTALL"
+
+## Uninstall unneeded packages
+sed -i 's/^HoldPkg/#&/' /etc/pacman.conf
+pacman --noconfirm -Rus $PKGS_TO_UNINSTALL
+sed -i '/HoldPkg/s/#//g' /etc/pacman.conf
+pacman --asdeps -D bash gnu-free-fonts iptables-nft lib32-sdl12-compat libglvnd mkinitcpio noto-fonts ntfs-3g qt6-multimedia-gstreamer pacman phonon-qt6-gstreamer-git polkit wireplumber &> /dev/null
 
 ## Mkinitcpio/GRUB
 mkinitcpio -P
@@ -71,7 +80,6 @@ mkinitcpio -P
 ## Remove files needed only by ArchISO
 (pacman -Qi lightdm &> /dev/null) || rm -rf /etc/lightdm
 rm -f /version /etc/mkinitcpio.conf.system /etc/sudoers.d/10-installer
-rm -f /linux-installer-chroot.sh
 
 ## Exit gracefully even if errors occurred
 exit 0
