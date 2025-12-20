@@ -4,6 +4,7 @@ Comment=Install ZestISO on your computer
 Categories=System;
 Exec=/usr/lib/zestiso-installer/zestiso-installer
 Terminal=true
+TerminalOptions=
 Type=Application
 Icon=system-software-install
 StartupNotify=true

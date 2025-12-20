@@ -8,7 +8,7 @@ url='https://github.com/dankcuddlybear/zestiso'
 depends=(
     arch-pkg-gui-tools
     pacman-contrib
-	pamac
+	pamac-aur
 	plasma6-applets-arch-update-notifier
 )
 package() {

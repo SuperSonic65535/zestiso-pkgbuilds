@@ -28,7 +28,7 @@ http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
 
 <group name="commandConfigPage">
     <entry name="updateInterval" type="Int">
-    <default>30</default>
+    <default>720</default>
     </entry>
 
     <entry name="debugMode" type="Bool">
