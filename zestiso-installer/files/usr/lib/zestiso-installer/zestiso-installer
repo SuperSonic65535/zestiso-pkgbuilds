@@ -324,9 +324,13 @@ while true; do
 			exit 0;;
 		"expert")
 			SelectedPartitions="$(PartitionSelection)"
-			kdialog --warningyesno "$OS_NAME is now ready to be installed to the selected partitions.\nThis will delete any existing OS on the selected partitions.\nThis will also delete all data on partitions that will be formatted.\nPlease check the list of changes:\n\n${SelectedPartitions}\n\nBegin installation?" || break
-			InstallOS "$SelectedPartitions"
-			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
-			exit 0;;
+			if [ ! -z "$SelectedPartitions" ]; then
+				kdialog --warningyesno "$OS_NAME is now ready to be installed to the selected partitions.\nThis will delete any existing OS on the selected partitions.\nThis will also delete all data on partitions that will be formatted.\nPlease check the list of changes:\n\n${SelectedPartitions}\n\nBegin installation?" && Continue=1 || Continue=0
+				if [ "$Continue" == 1 ]; then
+					InstallOS "$SelectedPartitions"
+					kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
+					exit 0
+				fi
+			fi;;
 	esac
 done
