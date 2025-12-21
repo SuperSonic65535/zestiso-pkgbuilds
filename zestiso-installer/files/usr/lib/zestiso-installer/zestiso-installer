@@ -166,6 +166,7 @@ PartitionSelection() {
 	done; echo "$SelectedPartitions"
 }
 InstallOS() {
+	notify-send -u normal -t 0 -a "$OS_NAME Installer" -i install "Installing $OS_NAME" "Installation will take around 2-8 minutes, depending on your hardware. Sit back and relax for a while."
 	SelectedPartitions="$1"
 
 	## Move root partition to top of list so it is mounted first
@@ -240,8 +241,8 @@ fi
 
 ## Main menu
 while true; do
-	#Selection="$(kdialog --menu "How would you like to install ZestISO?" "multiboot" "Install alongside current OS" "replace" "Replace a partition with ZestISO" "erase" "Erase disk and install ZestISO" "expert" "Expert installation" 0 "Quit ❌")"
-	Selection="$(kdialog --menu "How would you like to install ZestISO?" "erase" "Erase disk and install ZestISO" "expert" "Expert installation" 0 "Quit ❌")"
+	#Selection="$(kdialog --menu "How would you like to install $OS_NAME?" "multiboot" "Install alongside current OS" "replace" "Replace a partition with $OS_NAME" "erase" "Erase disk and install $OS_NAME" "expert" "Expert installation" 0 "Quit ❌")"
+	Selection="$(kdialog --menu "How would you like to install $OS_NAME?" "erase" "Erase disk and install $OS_NAME" "expert" "Expert installation" 0 "Quit ❌")"
 	[ -z "$Selection" ] || [ "$Selection" == "0" ] && exit 0
 
 	case $Selection in
