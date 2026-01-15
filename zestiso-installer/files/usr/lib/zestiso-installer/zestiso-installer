@@ -226,6 +226,12 @@ InstallOS() {
 	sudo mkdir -p /mnt/home/live/.config/autostart
 	sudo cp "$SCRIPT_DIR/user-setup.desktop" /mnt/home/live/.config/autostart/
 	sudo cp "$SCRIPT_DIR/user-setup.sh" /mnt/home/live/
+	if [ -f /mnt/bin/icewm ]; then
+		sudo mkdir -p /mnt/home/live/.config/icewm
+		sudo sh -c 'echo "#!/bin/sh" > /mnt/home/live/.config/icewm/startup'
+		sudo sh -c 'echo "/home/live/user-setup.sh" >> /mnt/home/live/.config/icewm/startup'
+		sudo chmod +x /mnt/home/live/.config/icewm/startup
+	fi
 
 	## Chroot setup
 	sudo arch-chroot /mnt "/installer-chroot.sh"
@@ -289,7 +295,7 @@ while true; do
 				InstallationText="${InstallationText}Install $OS_NAME on disk $SelectedDisk\n"
 				[ "$BootMode" == "i386-pc" ] && InstallationText="${InstallationText}Install GRUB bootloader to MBR on disk $SelectedDisk (legacy BIOS mode)" || \
 				InstallationText="${InstallationText}Install GRUB bootloader to GPT on disk $SelectedDisk (UEFI mode)"
-				InstallationText="${InstallationText}\n\nThis will erase ALL data on disk $SelectedDisk. Make sure you have backed up any important files.\nBegin installation?"
+				InstallationText="${InstallationText}\n\nThis will erase ALL data on disk $SelectedDisk. Make sure you have backed up any important files.\nThis window will close during installation, and you will be notified when installation is complete.\nBegin installation?"
 				kdialog --warningyesno "$InstallationText" || break
 
 				echo "Erasing disk $SelectedDisk and creating partitions..."
@@ -321,7 +327,7 @@ while true; do
 						fi;;
 				esac; break
 			done
-			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
+			kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\" and will be asked to complete the setup.\n\nHave fun, and thanks for using $OS_NAME!"
 			exit 0;;
 		"expert")
 			SelectedPartitions="$(PartitionSelection)"
@@ -329,7 +335,7 @@ while true; do
 				kdialog --warningyesno "$OS_NAME is now ready to be installed to the selected partitions.\nThis will delete any existing OS on the selected partitions.\nThis will also delete all data on partitions that will be formatted.\nPlease check the list of changes:\n\n${SelectedPartitions}\n\nBegin installation?" && Continue=1 || Continue=0
 				if [ "$Continue" == 1 ]; then
 					InstallOS "$SelectedPartitions"
-					kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\". You can change the user name and password from the settings.\n\nHave fun, and thanks for using $OS_NAME!"
+					kdialog --msgbox "$OS_NAME installation complete. Please restart your computer.\n\nYou will be automatically logged in as the user \"live\" and will be asked to complete the setup.\n\nHave fun, and thanks for using $OS_NAME!"
 					exit 0
 				fi
 			fi;;
