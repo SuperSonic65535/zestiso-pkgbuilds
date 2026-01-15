@@ -68,6 +68,7 @@ done
 echo "To remove: $PKGS_TO_UNINSTALL"
 
 ## Uninstall unneeded packages
+pacman --asexplicit -D kdialog
 sed -i 's/^HoldPkg/#&/' /etc/pacman.conf
 pacman --noconfirm -Rus $PKGS_TO_UNINSTALL
 sed -i '/HoldPkg/s/#//g' /etc/pacman.conf
