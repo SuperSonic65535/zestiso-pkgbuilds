@@ -8,16 +8,12 @@ url='https://github.com/dankcuddlybear/zestiso'
 depends=(
     arch-pkg-gui-tools
     pacman-contrib
+    pacmgr
 	pamac-aur
 	plasma6-applets-arch-update-notifier
 )
 package() {
-	cp -r "$srcdir/../files/etc" "$pkgdir"
 	cp -r "$srcdir/../files/usr" "$pkgdir"
 	"$srcdir/../../set-default-permissions.sh" "$pkgdir"
-	chmod +x "$pkgdir/usr/lib/pamac-plasma/pamac-update.sh"
-	chmod +x "$pkgdir/usr/lib/pamac-plasma/update-notify.sh"
-	chmod +x "$pkgdir/usr/lib/pamac-plasma/update-repos.sh"
 	chmod +x "$pkgdir/usr/share/libalpm/scripts/pamac-plasma"
-	chmod 750 "$pkgdir/etc/sudoers.d"
 }

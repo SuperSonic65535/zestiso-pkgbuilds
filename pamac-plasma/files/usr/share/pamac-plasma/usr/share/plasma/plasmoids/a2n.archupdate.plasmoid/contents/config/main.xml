@@ -52,11 +52,11 @@ http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     </entry>
 
     <entry name="updateCommand" type="String">
-        <default>/usr/lib/pamac-plasma/pamac-update.sh</default>
+        <default>/usr/lib/pacmgr/pamac-update.sh</default>
     </entry>
 
     <entry name="updateCommandOne" type="String">
-        <default>/usr/lib/pamac-plasma/pamac-update.sh</default>
+        <default>/usr/lib/pacmgr/pamac-update.sh</default>
     </entry>
 
     <entry name="countArchCommand" type="String">

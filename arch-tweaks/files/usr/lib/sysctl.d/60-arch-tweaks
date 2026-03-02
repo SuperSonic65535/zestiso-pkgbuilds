@@ -1,17 +1,17 @@
 # Begin writing dirty data when VFS write cache reaches 1MiB
-vm.dirty_background_bytes = 1048576
+#vm.dirty_background_bytes = 1048576
 
 # Begin writing dirty data that is over 5 seconds old
-vm.dirty_expire_centisecs = 500
+#vm.dirty_expire_centisecs = 500
 
 # Write all dirty data now once VFS write cache reaches 4MiB
-vm.dirty_bytes = 4194304
+#vm.dirty_bytes = 4194304
 
 # Make the kernel less likely to reclaim VFS cache memory
 vm.vfs_cache_pressure = 25
 
 # Enable sync command via Magic SysRq key
-kernel.sysrq = 16
+#kernel.sysrq = 16
 
 # Enable TCP fast open on incoming and outgoing connections to reduce latency
 net.ipv4.tcp_fastopen = 3
@@ -22,9 +22,9 @@ net.ipv4.tcp_slow_start_after_idle = 0
 # TCP will send a keepalive probe after 1 second of inactivity,
 # and every 1 second after that if the server/client does not respond.
 # TCP will send up to 100 keepalive probes before disconnecting.
-net.ipv4.tcp_keepalive_time = 1
-net.ipv4.tcp_keepalive_intvl = 1
-net.ipv4.tcp_keepalive_probes = 100
+#net.ipv4.tcp_keepalive_time = 1
+#net.ipv4.tcp_keepalive_intvl = 1
+#net.ipv4.tcp_keepalive_probes = 100
 
 # Enable TCP BBR congestion control for better speed/latency
 net.core.default_qdisc = cake

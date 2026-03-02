@@ -5,19 +5,45 @@ pkgrel=$(expr $(date +%-S) + $(expr 60 \* $(date +%-M)) + $(expr 3600 \* $(date 
 pkgdesc='KDE Plasma desktop - minimal bundle (no apps included)'
 arch=(any)
 url='https://github.com/dankcuddlybear/zestiso'
-depends=(bluedevil
-	breeze-gtk
-	kde-gtk-config gtk3
-	kscreen
-	kwallet-pam
-	plasma-desktop
+install=install.install
+depends=(
+	plasma-login-manager
 	plasma-nm
 	plasma-pa
+	plasma-workspace
+	polkit-kde-agent
 	powerdevil power-profiles-daemon python-gobject
-	sddm-kcm
-	xdg-desktop-portal-gtk
-	xdg-desktop-portal-kde
+	systemsettings
+
 )
+#optdepends=(
+#	audiocd-kio
+#	baloo
+#	breeze-plymouth
+#	drkonqi
+#	flatpak-kcm
+#	libappimage
+#	libavif
+#	libheif
+#	libjxl
+#	jxrlib
+#	kdepim-addons
+#	kdeplasma-addons
+#	kinfocenter
+#	ksshaskpass
+#	kwallet-pam
+#	kwalletmanager
+#	kwrited
+#	openjpeg2
+#	plasma-browser-integration
+#	plasma-disks
+#	plasma-firewall
+#	plasma-keyboard
+#	plasma-systemmonitor
+#	plasma-vault
+#	plasma-welcome
+#	plasma-workspace-wallpapers
+#)
 package() {
 	cp -r "$srcdir/../files/usr" "$pkgdir"
 	"$srcdir/../../set-default-permissions.sh" "$pkgdir"
