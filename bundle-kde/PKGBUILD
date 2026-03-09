@@ -16,6 +16,7 @@ depends=(bundle-kde-lite
 	bluedevil bluez-obex
 	kscreen
 	plasma-disks
+	plasma-keyboard
 	plasma-thunderbolt
 	print-manager system-config-printer cups-pk-helper python-pysmbc
 	wacomtablet
@@ -39,8 +40,6 @@ depends=(bundle-kde-lite
 	ksshaskpass
 	plasma-browser-integration
 	plasma-firewall
-	plasma-keyboard
-	plasma-nm qrca
 	purpose
 
 	# Settings
