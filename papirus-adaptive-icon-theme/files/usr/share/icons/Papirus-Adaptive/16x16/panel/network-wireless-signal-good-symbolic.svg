@@ -1,1 +1,53 @@
-network-wireless-signal-good.svg
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="network-wireless-signal-good-symbolic.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#000000"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="8"
+     inkscape:cx="-11.875"
+     inkscape:cy="15.125"
+     inkscape:window-width="1176"
+     inkscape:window-height="598"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+    .ColorScheme-Text { color:#ffffff; }
+    .ColorScheme-Highlight { color:#4285f4; }
+    .ColorScheme-NeutralText { color:#ff9800; }
+    .ColorScheme-PositiveText { color:#4caf50; }
+    .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+  </defs>
+  <path
+     class="ColorScheme-Text"
+     style="display:inline;fill:currentColor;stroke-width:0.710767"
+     d="M 8.0012859,4.33 A 7.6760015,7.5000007 0 0 0 2.792,6.3319532 L 8.0012859,13.33 13.208573,6.3339064 A 7.6760015,7.5000007 0 0 0 8.0012859,4.33 Z"
+     id="path2" />
+  <path
+     class="ColorScheme-Text"
+     style="display:inline;fill:none;stroke:currentColor;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+     d="M 8.0014669,1.5000007 A 10.799603,10.551982 0 0 0 0.67236223,4.3166104 L 8.0014669,14.162378 15.327759,4.3193584 A 10.799603,10.551982 0 0 0 8.0014669,1.5000007 Z"
+     id="path1" />
+</svg>

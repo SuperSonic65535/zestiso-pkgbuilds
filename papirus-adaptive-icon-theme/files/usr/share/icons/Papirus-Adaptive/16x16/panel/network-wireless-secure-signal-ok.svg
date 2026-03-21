@@ -1,10 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
- <defs>
-  <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="network-wireless-secure-signal-ok.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#000000"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="22.627417"
+     inkscape:cx="10.142563"
+     inkscape:cy="7.5130095"
+     inkscape:window-width="1176"
+     inkscape:window-height="598"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+    .ColorScheme-Text { color:#ffffff; }
+    .ColorScheme-Highlight { color:#4285f4; }
+    .ColorScheme-NeutralText { color:#ff9800; }
+    .ColorScheme-PositiveText { color:#4caf50; }
+    .ColorScheme-NegativeText { color:#f44336; }
   </style>
- </defs>
- <path style="opacity:.35;fill:currentColor" class="ColorScheme-Text" d="M 8.029,2 8.031,2.002 C 4.9968,2.002 2.2653,3.2713 0,5.0156 L 8.031,14 9,12.904 V 11 H 10.014 C 10.033,9.365 11.356,8 13,8 13.105,8 13.204,8.02 13.307,8.031 L 16,4.9844 C 13.742,3.2628 11.04,2 8.029,2 Z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,7 C 5,7 3.0996,8.5 3.0996,8.5 L 8,14 9,12.877 V 11 H 10.014 C 10.03,9.622 10.976,8.447 12.256,8.107 11.478,7.663 10.02,7 8,7 Z"/>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 13,9 C 11.892,9 11,9.911 11,11.031 V 12 H 10 V 16 H 16 V 12 H 15 V 11.031 C 15,9.911 14.108,9 13,9 Z M 13,10 C 13.554,10 14,10.442 14,11 V 12 H 12 V 11 C 12,10.442 12.446,10 13,10 Z"/>
+  </defs>
+  <path
+     style="fill:currentColor"
+     class="ColorScheme-Text"
+     d="m 13,9 c -1.11,0 -2,0.91 -2,2.03 V 12 h -1 v 4 h 6 V 12 H 15 V 11.03 C 15,9.91 14.11,9 13,9 Z m 0,1 c 0.55,0 1,0.44 1,1 v 1 h -2 v -1 c 0,-0.56 0.45,-1 1,-1 z"
+     id="path1-5" />
+  <path
+     class="ColorScheme-Text"
+     style="display:inline;fill:currentColor;stroke-width:0.473845"
+     d="M 8.0018573,7.33 A 5.1173343,5.0000005 0 0 0 4.529,8.6646355 L 8.0018573,13.329999 11.473382,8.6659376 A 5.1173343,5.0000005 0 0 0 8.0018573,7.33 Z"
+     id="path2" />
+  <path
+     class="ColorScheme-Text"
+     style="display:inline;fill:none;stroke:currentColor;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+     d="M 8.0014669,1.5000007 A 10.799603,10.551982 0 0 0 0.67236223,4.3166104 L 8.0014669,14.162378 15.327759,4.3193584 A 10.799603,10.551982 0 0 0 8.0014669,1.5000007 Z"
+     id="path1" />
 </svg>

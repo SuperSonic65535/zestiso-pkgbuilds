@@ -4,7 +4,7 @@
    height="16"
    version="1.1"
    id="svg2"
-   sodipodi:docname="network-wireless-offline.svg"
+   sodipodi:docname="network-wireless-error-symbolic.svg"
    inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -12,16 +12,16 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview2"
-     pagecolor="#010101"
+     pagecolor="#505050"
      bordercolor="#ffffff"
      borderopacity="1"
      inkscape:showpageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="2.8284273"
-     inkscape:cx="-71.594558"
-     inkscape:cy="4.2426405"
+     inkscape:zoom="8.639961"
+     inkscape:cx="-11.689868"
+     inkscape:cy="15.046364"
      inkscape:window-width="1176"
      inkscape:window-height="598"
      inkscape:window-x="0"
@@ -40,23 +40,14 @@
     .ColorScheme-NegativeText { color:#f44336; }
   </style>
   </defs>
-  <g
-     id="g1"
-     style="opacity:0.5">
-    <path
-       class="ColorScheme-Text"
-       style="display:inline;fill:currentColor"
-       d="M 8.002274,2 A 9.3151398,8.727273 0 0 0 1,4.980824 L 8.002274,14 15,4.9829545 A 9.3151398,8.727273 0 0 0 8.002274,2 Z"
-       id="path2" />
-    <path
-       class="ColorScheme-Text"
-       style="fill:currentColor"
-       d="M 8,1 C 4.9494,1 2.0806,2.0732 0,4 L 8,15 16,4 C 13.919,2.0731 11.051,1 8,1 Z m 0,2 c 1.928417,0 3.635471,0.64124 5.130859,1.546875 L 8,11.601562 2.869141,4.546875 C 4.36453,3.641319 6.07196,3 8,3 Z"
-       id="path1-6" />
-  </g>
   <path
-     style="color:#dfdfdf;fill:#ff0000;fill-opacity:1;stroke-width:1.75"
      class="ColorScheme-Text"
-     d="M 15.125,9 12.500001,11.625 9.875,9 9,9.875 11.625,12.500001 9,15.125 9.875,16 12.500001,13.375 15.125,16 16,15.125 13.375,12.500001 16,9.875 Z"
+     style="opacity:1;fill:currentColor"
+     d="M 8.0000002,1 C 4.9494002,1 2.0806,2.0732383 0,4.0001071 L 8.0000002,15 11,11.624879 V 5.000143 h 4.000001 V 6.1251831 L 16,4.0001071 C 13.919,2.0731383 11.051001,1 8.0000002,1 Z"
      id="path1" />
+  <path
+     style="fill:#ffaa00;fill-opacity:1"
+     class="error"
+     d="M 12,6 V 10 L 12.25,12 H 13.75 L 14,10 V 6 Z M 12,13 V 15 H 14 V 13 Z"
+     id="path2" />
 </svg>
